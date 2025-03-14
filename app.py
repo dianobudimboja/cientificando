@@ -1,15 +1,6 @@
 from flask import Flask, render_template
-from sqlalchemy import text
 
 app = Flask(__name__, static_folder='templates', static_url_path='')
-
-def get_user(user_id):
-    return db.session.execute(
-        text('SELECT * FROM users WHERE id = :id'), 
-        {'id': user_id}
-    ).fetchone()
-
-
 
 @app.route('/')
 def index():
