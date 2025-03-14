@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cientificando</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0a1a2f;
+      --secondary-color: #00f3ff;
+      --accent-color: #4d8cff;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Header */
+    .header {
+      background: rgba(10, 42, 85, 0.95);
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+    }
+
+    .logo {
+      width: 50px;
+      filter: drop-shadow(0 0 5px var(--secondary-color));
+    }
+
+    .logo-text {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-left: 0.5rem;
+      color: var(--secondary-color);
+    }
+
+    .menu-btn {
+      background: none;
+      border: 2px solid var(--secondary-color);
+      color: var(--text-color);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-btn:hover {
+      background: var(--secondary-color);
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 70px;
+      right: 20px;
+      background: rgba(10, 26, 47, 0.95);
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 1100;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    .mobile-menu a:hover {
+      background: var(--secondary-color);
+      color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(10, 26, 47, 0.9), rgba(10, 26, 47, 0.9)),
+                  url('Fund.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .brand {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--secondary-color);
+    }
+
+    .subscribe-btn {
+      background: linear-gradient(45deg, #00f3ff, #4d8cff);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      color: var(--primary-color);
+      font-weight: bold;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subscribe-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, 
+          transparent 25%,
+          rgba(255,255,255,0.1) 50%,
+          transparent 75%);
+      transform: rotate(45deg);
+      animation: btn-effect 3s infinite linear;
+    }
+
+    @keyframes btn-effect {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) rotate(45deg); }
+    }
+
+   
+    /* Footer */
+    .footer {
+      background: #061020;
+      padding: 2rem;
+      border-top: 1px solid rgba(0, 243, 255, 0.1);
+    }
+
+    .social-icon {
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      color: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+
+    /* Estilos específicos da página Sobre */
+    .about-hero {
+        height: 70vh;
+        background: linear-gradient(rgba(10, 26, 47, 0.9), rgba(10, 26, 47, 0.9)),
+                    url('Fund.jpg');
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+    }
+
+    .mission-card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(0, 243, 255, 0.2);
+        border-radius: 20px;
+        padding: 2rem;
+        margin: 2rem 0;
+        transition: all 0.3s ease;
+    }
+
+    .mission-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 243, 255, 0.1);
+    }
+
+    .value-card {
+        background: rgba(0, 243, 255, 0.05);
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 1rem;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .value-card i {
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+    }
+
+    .value-card:hover {
+        background: rgba(0, 243, 255, 0.1);
+        transform: scale(1.05);
+    }
+
+    .timeline {
+        border-left: 2px solid var(--secondary-color);
+        padding-left: 2rem;
+        margin: 3rem 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="Logotipo.png" width="10px" alt="Cientificando" class="logo">
+      <span class="logo-text">Cientificando</span>
+    </div>
+    <nav>
+      <button class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+    <!-- Conteúdo Principal -->
+    <main>
+        <!-- Seção Hero -->
+        <section class="about-hero">
+            <div class="container">
+                <h1 class="display-4 mb-4">Sobre a <span style="color: var(--secondary-color)">Cientificando</span></h1>
+                <p class="lead">Desvendando os Mistérios da Ciência e Tecnologia desde 2023</p>
+            </div>
+        </section>
+
+        <!-- Missão e Visão -->
+        <section class="container py-5">
+            <div class="mission-card">
+                <h2 class="mb-4" style="color: var(--secondary-color)">Nosso Objetivo</h2>
+                <p class="lead">Democratizar o acesso ao Conhecimento Científico através de conteúdos claros, precisos e inspiradores, conectando a Pesquisa de Ponta com o Público Geral.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <i class="fas fa-atom"></i>
+                        <h4>Rigor Científico</h4>
+                        <p>Preza-se por Conteúdos Revisados e Atualizados por especialistas</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Inovação Constante</h4>
+                        <p>Explorando sempre as Últimas Descobertas</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <i class="fas fa-globe"></i>
+                        <h4><a href="https://chat.whatsapp.com/GpdRibGDy8P4L2eOeYGvkq" target="_blank">Acesso Universal</a></h4>
+                        <p>Conteúdo Gratuito e Acessível</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- História -->
+        <section class="container py-5">
+            <div class="mission-card">
+                <h2 class="mb-4" style="color: var(--secondary-color)">Nossa História</h2>
+                <div class="timeline">
+                    <div class="mb-5">
+                        <h4>2022 - Fundação</h4>
+                        <p>Nascemos como um Pequeno Projeto de Estudo com o Objetivo de tornar a Ciência mais acessível ao Público Geral de forma mais Leiga e Compreensível.</p>
+                    </div>
+                    <div class="mb-5">
+                        <h4>2023 - Expansão Digital</h4>
+                        <p>Lançamento do canal no YouTube e Plataformas Sociais, continuando a tentar manter a consistência de visualizações e engajamento, além de ajudar as pessoas a entender a Ciência.</p>
+                    </div>
+                    <div class="mb-5">
+                        <h4>ATUAL - Reconhecimento</h4>
+                        <p>Primeira iniciativa de um Canal de Divulgação Científica em Angola!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        <p class="mb-0">© 2023 Cientificando. Todos os Direitos Reservados.</p>
+        <p class="mb-0">Feito por <span style="color: var(--secondary-color);"> <a href="https://www.instagram.com/dianobudimboja/" style="text-decoration: none; color: var(--secondary-color);">Diano C. Budimbo Já</a></span></p>
+      </div>
+      <div>
+        <a href="https://www.youtube.com/@cientificando17" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/dianobudimboja/" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://web.facebook.com/dianobudimboja?_rdc=1&_rdr" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/dianobudimboja" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@dianobudimboja17" class="social-icon"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'mobile-menu';
+    mobileMenu.innerHTML = `
+      <a href="index.html">Início</a>
+      <a href="membros.html">Membros</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contactos.html">Contactos</a>
+    `;
+    mobileMenu.style.display = 'none';
+    document.body.appendChild(mobileMenu);
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
