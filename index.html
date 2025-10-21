@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Descubra os mistérios da ciência com explicações claras sobre física quântica, biotecnologia e exploração espacial. Conteúdo verificado por especialistas.">
+  <meta name="keywords" content="ciência, física quântica, biotecnologia, exploração espacial, tecnologia, educação, notícias científicas">
+  <meta name="author" content="Diano C. Budimbo Já">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="Portuguese">
+  <meta name="revisit-after" content="1 days">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+  <meta name="copyright" content="2023 Cientificando. Todos os Direitos Reservados.">
+  <meta name="google" content="notranslate">
+  <meta name="twitter:site" content="@Cientificando">
+  <meta name="twitter:creator" content="@dianobudimboja">
+  <meta name="twitter:image:alt" content="Logo Cientificando com elementos científicos">
+  <meta name="twitter:image:src" content="https://www.youtube.com/watch?v=EYWT6Jp17NM&list=PLt7OW-eXOYUMwPPjPxKitTWMCw8RZtV2i">
+  <meta name="twitter:image:width" content="1200">
+  <meta name="twitter:image:height" content="600">
+  <meta name="twitter:image:alt" content="Logo Cientificando com elementos científicos">
+  <meta name="twitter:image:src" content="https://www.youtube.com/watch?v=EYWT6Jp17NM&list=PLt7OW-eXOYUMwPPjPxKitTWMCw8RZtV2i">
+  <meta name="google-site-verification" content="497wtHqo_67FfyvlJ2uT_HDRdgkgPQODT3GM5ciEoVE" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Favicon32x32.png">
+  <title>Cientificando</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0a1a2f;
+      --secondary-color: #00f3ff;
+      --accent-color: #4d8cff;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Header */
+    .header {
+      background: rgba(10, 42, 85, 0.95);
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+    }
+
+    .logo {
+      width: 50px;
+      filter: drop-shadow(0 0 5px var(--secondary-color));
+    }
+
+    .logo-text {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-left: 0.5rem;
+      color: var(--secondary-color);
+    }
+
+    .menu-btn {
+      background: none;
+      border: 2px solid var(--secondary-color);
+      color: var(--text-color);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-btn:hover {
+      background: var(--secondary-color);
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 70px;
+      right: 20px;
+      background: rgba(10, 26, 47, 0.95);
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 1100;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    .mobile-menu a:hover {
+      background: var(--secondary-color);
+      color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(10, 26, 47, 0.9), rgba(10, 26, 47, 0.9)),
+                  url('Futurista.png');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .brand {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--secondary-color);
+    }
+
+    .subscribe-btn {
+      background: linear-gradient(45deg, #00f3ff, #4d8cff);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      color: var(--primary-color);
+      font-weight: bold;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subscribe-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, 
+          transparent 25%,
+          rgba(255,255,255,0.1) 50%,
+          transparent 75%);
+      transform: rotate(45deg);
+      animation: btn-effect 3s infinite linear;
+    }
+
+    @keyframes btn-effect {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) rotate(45deg); }
+    }
+
+    /* Aside */
+    .related-topics {
+      padding: 2rem 0;
+      background: rgba(0, 243, 255, 0.05);
+    }
+
+    .topic-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      border-radius: 15px;
+      padding: 1.5rem;
+      margin: 1rem;
+      min-width: 300px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: var(--text-color);
+    }
+
+    .topic-card:hover {
+      transform: translateY(-5px);
+      background: rgba(0, 243, 255, 0.1);
+    }
+
+    /* Footer */
+    .footer {
+      background: #061020;
+      padding: 2rem;
+      border-top: 1px solid rgba(0, 243, 255, 0.1);
+    }
+
+    .social-icon {
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      color: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="Logotipo.png" width="10px" alt="Cientificando" class="logo">
+      <span class="logo-text">Cientificando</span>
+    </div>
+    <nav>
+      <button class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="hero">
+    <div class="container hero-content">
+      <h1 class="display-4 mb-4">Bem-Vindo a <span class="brand"><a href="https://www.youtube.com/@cientificando17" style="text-decoration: none; color: var(--secondary-color);">Cientificando</a></span></h1>
+      <p class="lead mb-5">Explorando as Fronteiras do Conhecimento onde a Ciência encontra a Tecnologia para criar o Futuro.</p>
+      <button class="subscribe-btn">
+        <i class="fab fa-youtube me-2"></i><a href="https://www.youtube.com/@cientificando17" target="_blank" style="text-decoration: none; color: var(--primary-color);">Inscreva-se no YouTube</a>
+      </button>
+    </div>
+  </main>
+
+  <!-- Aside -->
+  <aside class="related-topics">
+    <div class="container d-flex overflow-auto">
+      <a href="https://www.youtube.com/watch?v=EYWT6Jp17NM&list=PLt7OW-eXOYUMwPPjPxKitTWMCw8RZtV2i" class="topic-card">
+        <h4><i class="fas fa-brain me-2"></i>Ciência &amp; Inteligência Artificial</h4>
+        <p>Criações e Técnicas Avançadas de IA que ajudam a Ciência a Solucionar muitos Problemas</p>
+      </a>
+      <a href="https://www.youtube.com/watch?v=Co7-T6Mcqtw&list=PLt7OW-eXOYUOffOv-JBO9cisODrPpADVL" class="topic-card">
+        <h4><i class="fas fa-dna me-2"></i>Medicina</h4>
+        <p>Últimos avanços da Medicina Moderna que Revolucionam a Humanidade</p>
+      </a>
+      <a href="https://www.youtube.com/watch?v=DTZrH0CORkE&list=PLt7OW-eXOYUMxCQaqCGxZYQg3HbkcyfZC&index=3" class="topic-card">
+        <h4><i class="fas fa-rocket me-2"></i>Exploração Espacial</h4>
+        <p>Tecnologias Avançadas para Explorar o Cosmos</p>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        <p class="mb-0">© 2023 Cientificando. Todos os Direitos Reservados.</p>
+        <p class="mb-0">Feito por <span style="color: var(--secondary-color);"> <a href="https://www.instagram.com/dianobudimboja/" style="text-decoration: none; color: var(--secondary-color);">Diano C. Budimbo Já</a></span></p>
+      </div>
+      <div>
+        <a href="https://www.youtube.com/@cientificando17" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/dianobudimboja/" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://web.facebook.com/dianobudimboja?_rdc=1&_rdr" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/dianobudimboja" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@dianobudimboja17" class="social-icon"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'mobile-menu';
+    mobileMenu.innerHTML = `
+      <a href="index.html">Início</a>
+      <a href="membros.html">Membros</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contactos.html">Contactos</a>
+    `;
+    mobileMenu.style.display = 'none';
+    document.body.appendChild(mobileMenu);
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
