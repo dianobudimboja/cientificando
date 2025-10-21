@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cientificando</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #0a1a2f;
+      --secondary-color: #00f3ff;
+      --accent-color: #4d8cff;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Header */
+    .header {
+      background: rgba(10, 42, 85, 0.95);
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+    }
+
+    .logo {
+      width: 50px;
+      filter: drop-shadow(0 0 5px var(--secondary-color));
+    }
+
+    .logo-text {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-left: 0.5rem;
+      color: var(--secondary-color);
+    }
+
+    .menu-btn {
+      background: none;
+      border: 2px solid var(--secondary-color);
+      color: var(--text-color);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-btn:hover {
+      background: var(--secondary-color);
+      color: var(--primary-color);
+      transform: translateY(-2px);
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      position: fixed;
+      top: 70px;
+      right: 20px;
+      background: rgba(10, 26, 47, 0.95);
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      z-index: 1100;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text-color);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    .mobile-menu a:hover {
+      background: var(--secondary-color);
+      color: var(--primary-color);
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(10, 26, 47, 0.9), rgba(10, 26, 47, 0.9)),
+                  url('Fund.jpg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .brand {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--secondary-color);
+    }
+
+    .subscribe-btn {
+      background: linear-gradient(45deg, #00f3ff, #4d8cff);
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      color: var(--primary-color);
+      font-weight: bold;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subscribe-btn::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, 
+          transparent 25%,
+          rgba(255,255,255,0.1) 50%,
+          transparent 75%);
+      transform: rotate(45deg);
+      animation: btn-effect 3s infinite linear;
+    }
+
+    @keyframes btn-effect {
+      0% { transform: translateX(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) rotate(45deg); }
+    }
+
+   
+    /* Footer */
+    .footer {
+      background: #061020;
+      padding: 2rem;
+      border-top: 1px solid rgba(0, 243, 255, 0.1);
+    }
+
+    .social-icon {
+      font-size: 1.5rem;
+      margin: 0 0.5rem;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    .social-icon:hover {
+      color: var(--secondary-color);
+      transform: translateY(-3px);
+    }
+
+    /* Estilos específicos da página de Contactos */
+    .contact-hero {
+        height: 50vh;
+        background: linear-gradient(rgba(10, 26, 47, 0.9), rgba(10, 26, 47, 0.9)),
+                    url('https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?auto=format&fit=crop&w=1920&q=80');
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        padding-top: 80px;
+    }
+
+    .contact-card {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(0, 243, 255, 0.2);
+        border-radius: 20px;
+        padding: 2rem;
+        margin: 2rem auto;
+        max-width: 800px;
+        transition: all 0.3s ease;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 243, 255, 0.1);
+    }
+
+    .map-container {
+        border-radius: 20px;
+        overflow: hidden;
+        border: 2px solid rgba(0, 243, 255, 0.3);
+        height: 400px;
+        margin-top: 2rem;
+    }
+
+    .contact-icon {
+        font-size: 2rem;
+        color: var(--secondary-color);
+        margin-right: 1rem;
+    }
+
+    .whatsapp-link {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .whatsapp-link:hover {
+        color: var(--secondary-color);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <img src="Logotipo.png" width="10px" alt="Cientificando" class="logo">
+      <span class="logo-text">Cientificando</span>
+    </div>
+    <nav>
+      <button class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+  </header>
+     <!-- Conteúdo Principal -->
+    <main>
+        <!-- Seção Hero -->
+        <section class="contact-hero">
+            <div class="container">
+                <h1 class="display-4 mb-4"><span style="color: var(--secondary-color)">Contacte-nos</span></h1>
+                <p class="lead">Estamos aqui para responder às suas questões!</p>
+            </div>
+        </section>
+
+        <!-- Informações de Contacto -->
+        <section class="container py-5">
+            <div class="contact-card">
+                <h2 class="mb-4" style="color: var(--secondary-color)">Informações de Contacto</h2>
+                
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <div>
+                        <h4>Endereço</h4>
+                        <p>Luanda, Angola</p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-phone contact-icon"></i>
+                    <div>
+                        <h4>Telefone</h4>
+                        <p><a href="tel:+244936069611">+244 936 069 611</a></p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fab fa-whatsapp contact-icon"></i>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <a href="https://wa.me/+244936069611" class="whatsapp-link" target="_blank">
+                            +244 936 069 611
+                        </a>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-envelope contact-icon"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p><a href="mailto:diano.budimboja@gmail.com">diano.budimboja@gmail.com</a></p>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126084.251705056!2d13.185578699999999!3d-8.839987599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f24ecaad8b27%3A0x590a289d0f0a1e2a!2sLuanda%2C%20Angola!5e0!3m2!1sen!2spt!4v1690831234567!5m2!1sen!2spt" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div>
+        <p class="mb-0">© 2023 Cientificando. Todos os Direitos Reservados.</p>
+        <p class="mb-0">Feito por <span style="color: var(--secondary-color);"> <a href="https://www.instagram.com/dianobudimboja/" style="text-decoration: none; color: var(--secondary-color);">Diano C. Budimbo Já</a></span></p>
+      </div>
+      <div>
+        <a href="https://www.youtube.com/@cientificando17" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/dianobudimboja/" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://web.facebook.com/dianobudimboja?_rdc=1&_rdr" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="https://x.com/dianobudimboja" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@dianobudimboja17" class="social-icon"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const mobileMenu = document.createElement('div');
+    mobileMenu.className = 'mobile-menu';
+    mobileMenu.innerHTML = `
+      <a href="index.html">Início</a>
+      <a href="membros.html">Membros</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contactos.html">Contactos</a>
+    `;
+    mobileMenu.style.display = 'none';
+    document.body.appendChild(mobileMenu);
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
+    });
+  </script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
