@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,7 +95,7 @@
     .hero {
       height: 100vh;
       background: linear-gradient(rgba(10, 26, 47, 0.9), rgba(10, 26, 47, 0.9)),
-                  url('Fund.jpg');
+        url('Fund.jpg');
       background-size: cover;
       background-position: center;
       display: flex;
@@ -135,17 +136,22 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: linear-gradient(45deg, 
+      background: linear-gradient(45deg,
           transparent 25%,
-          rgba(255,255,255,0.1) 50%,
+          rgba(255, 255, 255, 0.1) 50%,
           transparent 75%);
       transform: rotate(45deg);
       animation: btn-effect 3s infinite linear;
     }
 
     @keyframes btn-effect {
-      0% { transform: translateX(-100%) rotate(45deg); }
-      100% { transform: translateX(100%) rotate(45deg); }
+      0% {
+        transform: translateX(-100%) rotate(45deg);
+      }
+
+      100% {
+        transform: translateX(100%) rotate(45deg);
+      }
     }
 
     /* Aside */
@@ -155,7 +161,7 @@
     }
 
     .topic-card {
-      background: rgba(255,255,255,0.05);
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(0, 243, 255, 0.2);
       border-radius: 15px;
       padding: 1.5rem;
@@ -190,59 +196,62 @@
       transform: translateY(-3px);
     }
 
-    
-        /* Estilos específicos para a página de membros */
-        .team-section {
-            padding: 120px 0 60px 0;
-        }
 
-        .member-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(0, 243, 255, 0.2);
-            border-radius: 20px;
-            padding: 2rem;
-            margin: 1.5rem 0;
-            transition: all 0.3s ease;
-        }
+    /* Estilos específicos para a página de membros */
+    .team-section {
+      padding: 120px 0 60px 0;
+    }
 
-        .member-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.1);
-        }
+    .member-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 243, 255, 0.2);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      transition: all 0.3s ease;
+    }
 
-        .member-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--secondary-color);
-            margin: 0 auto 1.5rem auto;
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
-        }
+    .member-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 243, 255, 0.1);
+    }
 
-        .member-name {
-            color: var(--secondary-color);
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
+    .member-photo {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--secondary-color);
+      margin: 0 auto 1.5rem auto;
+      box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+    }
 
-        .member-role {
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
+    .member-name {
+      color: var(--secondary-color);
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
 
-        .member-bio {
-            line-height: 1.8;
-            opacity: 0.9;
-        }
+    .member-role {
+      color: var(--accent-color);
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .member-bio {
+      line-height: 1.8;
+      opacity: 0.9;
+    }
   </style>
 </head>
+
 <body>
   <!-- Header -->
   <header class="header d-flex justify-content-between align-items-center">
     <div class="d-flex align-items-center">
-      <img src="Logotipo.png" width="10px" alt="Cientificando" class="logo">
+      <a href="index.html">
+        <img src="Logotipo.png" width="10px" alt="Cientificando" class="logo">
+      </a>
       <span class="logo-text">Cientificando</span>
     </div>
     <nav>
@@ -251,52 +260,54 @@
       </button>
     </nav>
   </header>
-    <!-- Main Content -->
-    <main class="team-section">
-        <div class="container">
-            <div class="row justify-content-center">
-                <!-- Membro 1 -->
-                <div class="col-lg-8">
-                    <div class="member-card text-center">
-                        <img src="DC.jpg" alt="Diano C. Budimbo Já" class="member-photo">
-                        <h2 class="member-name">Diano C. Budimbo Já</h2>
-                        <p class="member-role">C.E.O da Cientificando</p>
-                        <p class="member-bio">
-                            Cursando Ciência da Computação pela Universidade de IMETRO, Diano C. Budimbo Já lidera a Equipa da Cientificando.
-                            Curioso por Natureza e focado em criações de Novas Tecnologias que podem Revolucionar a Humanidade.
-                            Atualmente está focado na Produção de Conteúdos no YouTube e Instagram para o Público em Geral, com explicações acessíveis a todos.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Membro 2 -->
-                <div class="col-lg-8">
-                    <div class="member-card text-center">
-                        <img src="JA.png" alt="J.A. Muandumba" class="member-photo">
-                        <h2 class="member-name">João A. Muandumba</h2>
-                        <p class="member-role">Diretor-Executivo da Cientificando</p>
-                        <p class="member-bio">
-                            Estudante de Medicina, J.A. Muandumba é um dos pilares da criação e desenvolvimento da Cientificando.
-                            Cético por Natureza e estudando atualmente Métodos de Medicina Alternativa que poderia curar o Cancro.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Membro 3 -->
-                <div class="col-lg-8">
-                    <div class="member-card text-center">
-                        <img src="RM2.jpg" alt="Rúben M. Muapessa" class="member-photo">
-                        <h2 class="member-name">Rúben M. Muapessa</h2>
-                        <p class="member-role">Coordenador-Executivo da Cientificando</p>
-                        <p class="member-bio">
-                            Estudante de Ciências Físicas e Biológicas, responsável pela Coordenação na Produção de Conteúdos da Cientificando.
-                            Criativo em fornecimento de ideias e criando novas formas de se apresentar os conteúdos.
-                        </p>
-                    </div>
-                </div>
-            </div>
+  <!-- Main Content -->
+  <main class="team-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <!-- Membro 1 -->
+        <div class="col-lg-8">
+          <div class="member-card text-center">
+            <img src="DC.jpg" alt="Diano C. Budimbo Já" class="member-photo">
+            <h2 class="member-name">Diano C. Budimbo Já</h2>
+            <p class="member-role">Fundador da Cientificando</p>
+            <p class="member-bio" style="text-align: justify;">
+              Estudante de Ciência da Computação pela Universidade IMETRO, Diano C. Budimbo Já é Fundador da
+              Cientificando, uma Plataforma dedicada à
+              Divulgação Científica, com linguagem acessível e fundamentada.
+              Movido por Investigação contínua e interesse em Inovação.
+            </p>
+          </div>
         </div>
-    </main>
+
+        <!-- Membro 2 -->
+        <div class="col-lg-8">
+          <div class="member-card text-center">
+            <img src="JA.png" alt="J.A. Muandumba" class="member-photo">
+            <h2 class="member-name">Rafael M. Muhilica</h2>
+            <p class="member-role">Responsável pelo Desenvolvimento Técnico</p>
+            <p class="member-bio" style="text-align: justify;">
+              Estudante de Ciência da Computação, Rafael M. Muhilica integra a Equipa da Cientificando, contribuindo
+              para o Desenvolvimento Técnico da Plataforma.
+              Com interesse em Programação, colaborando na simplificação e disseminação do conhecimento em Tecnologia.
+            </p>
+          </div>
+        </div>
+
+        <!-- Membro 3 -->
+        <div class="col-lg-8">
+          <div class="member-card text-center">
+            <img src="RM2.jpg" alt="Rúben M. Muapessa" class="member-photo">
+            <h2 class="member-name">Rúben M. Muapessa</h2>
+            <p class="member-role">Coordenador de Produção</p>
+            <p class="member-bio" style="text-align: justify;">
+              Estudante de Ciências Naturais, Rúben M. Muapessa atua na coordenação da produção de conteúdos da
+              Cientificando, contribuindo para a organização, estruturação e qualidade das publicações.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 
 
   <!-- Footer -->
@@ -304,12 +315,15 @@
     <div class="container d-flex justify-content-between align-items-center">
       <div>
         <p class="mb-0">© 2023 Cientificando. Todos os Direitos Reservados.</p>
-        <p class="mb-0">Feito por <span style="color: var(--secondary-color);"> <a href="https://www.instagram.com/dianobudimboja/" style="text-decoration: none; color: var(--secondary-color);">Diano C. Budimbo Já</a></span></p>
+        <p class="mb-0">Feito por <span style="color: var(--secondary-color);"> <a
+              href="https://www.instagram.com/dianobudimboja/"
+              style="text-decoration: none; color: var(--secondary-color);">Diano C. Budimbo Já</a></span></p>
       </div>
       <div>
         <a href="https://www.youtube.com/@cientificando17" class="social-icon"><i class="fab fa-youtube"></i></a>
         <a href="https://www.instagram.com/dianobudimboja/" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="https://web.facebook.com/dianobudimboja?_rdc=1&_rdr" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="https://web.facebook.com/dianobudimboja?_rdc=1&_rdr" class="social-icon"><i
+            class="fab fa-facebook"></i></a>
         <a href="https://x.com/dianobudimboja" class="social-icon"><i class="fab fa-twitter"></i></a>
         <a href="https://www.tiktok.com/@dianobudimboja17" class="social-icon"><i class="fab fa-tiktok"></i></a>
       </div>
@@ -334,8 +348,9 @@
       mobileMenu.style.display = mobileMenu.style.display === 'none' ? 'block' : 'none';
     });
   </script>
-  
+
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
