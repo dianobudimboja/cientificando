@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Investigação — Cientificando{% endblock %}
+{% block description %}A investigação faz parte da cultura tecnológica da Cientificando: IA, agentes autónomos, machine learning, dados, HealthTech e mais.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Investigação</span>
+    <h1 style="margin-top:16px; max-width:18ch;">Investigamos o que vem a seguir.</h1>
+    <p class="lede" style="margin-top:20px;">A investigação faz parte da nossa cultura tecnológica.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">Áreas de investigação</span><h2 style="margin-top:14px;">Onde exploramos novas ideias</h2></div></div>
+    <div class="grid-3 reveal">
+      <div class="offer-card"><span class="idx">01</span><h3>Inteligência Artificial</h3></div>
+      <div class="offer-card"><span class="idx">02</span><h3>Agentes Autónomos</h3></div>
+      <div class="offer-card"><span class="idx">03</span><h3>Machine Learning</h3></div>
+      <div class="offer-card"><span class="idx">04</span><h3>Ciência de Dados</h3></div>
+      <div class="offer-card"><span class="idx">05</span><h3>Sistemas Distribuídos</h3></div>
+      <div class="offer-card"><span class="idx">06</span><h3>Educação Tecnológica</h3></div>
+      <div class="offer-card"><span class="idx">07</span><h3>HealthTech</h3></div>
+      <div class="offer-card"><span class="idx">08</span><h3>FinTech</h3></div>
+      <div class="offer-card"><span class="idx">09</span><h3>Automação & Tecnologias Emergentes</h3></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <span class="eyebrow">Artigos técnicos & projectos experimentais</span>
+    <h2 style="margin-top:14px;">Consulte o nosso blog</h2>
+    <p class="lede" style="margin-top:16px; max-width:70ch;">Publicamos artigos técnicos, notas de investigação e projectos experimentais no nosso espaço de Insights.</p>
+    <a href="{% url 'blog:list' %}" class="btn btn-primary" style="margin-top:20px;">Ver Insights</a>
+  </div>
+</section>
+{% endblock %}

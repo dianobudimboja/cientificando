@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Contacto — Cientificando{% endblock %}
+{% block description %}Fale com a Cientificando. Conte-nos o que está a tentar construir.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Contacto</span>
+    <h1 style="margin-top:16px; max-width:20ch;">Tem um problema que precisa de ser resolvido?</h1>
+    <p class="lede" style="margin-top:20px; max-width:64ch;">Conte-nos o problema que está a tentar resolver. Vamos compreendê-lo e explorar consigo a melhor abordagem tecnológica.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="display:grid; grid-template-columns:1.5fr 1fr; gap:60px; align-items:start;">
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% if form.errors %}
+        <div class="alert" style="background:#fdecea; color:#c0392b;">Verifique os campos assinalados abaixo.</div>
+      {% endif %}
+      <div class="form-grid">
+        <div class="field">
+          <label for="{{ form.name.id_for_label }}">Nome</label>
+          {{ form.name }}
+          {{ form.name.errors }}
+        </div>
+        <div class="field">
+          <label for="{{ form.email.id_for_label }}">Email</label>
+          {{ form.email }}
+          {{ form.email.errors }}
+        </div>
+        <div class="field">
+          <label for="{{ form.company.id_for_label }}">Empresa / Organização</label>
+          {{ form.company }}
+        </div>
+        <div class="field">
+          <label for="{{ form.project_type.id_for_label }}">Tipo de projecto</label>
+          {{ form.project_type }}
+        </div>
+        <div class="field full">
+          <label for="{{ form.message.id_for_label }}">Mensagem</label>
+          {{ form.message }}
+          {{ form.message.errors }}
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar pedido</button>
+    </form>
+
+    <aside class="contact-side">
+      {% if site_settings.contact_email %}<div class="item"><h4>Email institucional</h4><a href="mailto:{{ site_settings.contact_email }}">{{ site_settings.contact_email }}</a></div>{% endif %}
+      {% if site_settings.whatsapp_link %}<div class="item"><h4>WhatsApp</h4><a href="{{ site_settings.whatsapp_link }}" target="_blank" rel="noopener">Conversar no WhatsApp</a></div>{% endif %}
+      {% if site_settings.linkedin_url %}<div class="item"><h4>LinkedIn</h4><a href="{{ site_settings.linkedin_url }}" target="_blank" rel="noopener">LinkedIn da Cientificando</a></div>{% endif %}
+      {% if site_settings.github_url %}<div class="item"><h4>GitHub</h4><a href="{{ site_settings.github_url }}" target="_blank" rel="noopener">GitHub da Cientificando</a></div>{% endif %}
+      {% if site_settings.youtube_url %}<div class="item"><h4>YouTube</h4><a href="{{ site_settings.youtube_url }}" target="_blank" rel="noopener">Canal Cientificando</a></div>{% endif %}
+      {% if site_settings.instagram_url %}<div class="item"><h4>Instagram</h4><a href="{{ site_settings.instagram_url }}" target="_blank" rel="noopener">@cientificando17</a></div>{% endif %}
+    </aside>
+  </div>
+</section>
+{% endblock %}

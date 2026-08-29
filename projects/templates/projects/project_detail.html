@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}{{ project.name }} — Cientificando{% endblock %}
+{% block description %}{{ project.short_description }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">{{ project.tag }}</span>
+    <h1 style="margin-top:16px;">{{ project.name }}</h1>
+    {% if project.subtitle %}<p style="font-family:var(--font-mono); color:var(--accent); margin-top:6px;">{{ project.subtitle }}</p>{% endif %}
+    <p class="lede" style="margin-top:20px; max-width:64ch;">{{ project.short_description }}</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="display:grid; grid-template-columns:1.2fr .8fr; gap:50px; align-items:start;">
+    <div>
+      {% if project.long_description %}
+        <p class="lede">{{ project.long_description|linebreaks }}</p>
+      {% else %}
+        <p class="todo">TODO — adicionar descrição completa deste projecto no admin.</p>
+      {% endif %}
+    </div>
+    <div class="meta-row">
+      <span>Estado: {{ project.get_status_display }}</span>
+      <span>Categoria: {{ project.get_category_display }}</span>
+      {% for tech in project.technologies_list %}<span>{{ tech }}</span>{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" style="text-align:center;">
+  <div class="container">
+    <h2>Quer saber mais sobre este projecto?</h2>
+    <div class="hero-ctas" style="justify-content:center; margin-top:26px;">
+      <a href="{% url 'projects:list' %}" class="btn btn-ghost">Ver todos os projectos</a>
+      <a href="{% url 'contact:form' %}" class="btn btn-primary">Fale Connosco</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

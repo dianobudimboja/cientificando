@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}{{ article.title }} — Cientificando{% endblock %}
+{% block description %}{{ article.summary }}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container" style="max-width:800px;">
+    <span class="eyebrow">{{ article.get_category_display }}</span>
+    <h1 style="margin-top:16px;">{{ article.title }}</h1>
+    <p class="article-meta" style="margin-top:16px;">{{ article.author_name }} · {{ article.published_at|date:"d M Y" }} · {{ article.reading_time_minutes }} min de leitura</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:800px;">
+    <div class="lede" style="color:var(--ink); white-space:pre-line;">{{ article.content|linebreaks }}</div>
+  </div>
+</section>
+
+{% if article.related_articles.all %}
+<section class="section section-soft">
+  <div class="container">
+    <span class="eyebrow">Artigos relacionados</span>
+    <div class="grid-3 reveal" style="margin-top:26px;">
+      {% for related in article.related_articles.all %}
+      <a class="article-card" href="{{ related.get_absolute_url }}">
+        <span class="article-meta">{{ related.get_category_display }}</span>
+        <h3>{{ related.title }}</h3>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section" style="text-align:center;">
+  <div class="container">
+    <a href="{% url 'blog:list' %}" class="btn btn-ghost">← Voltar aos Insights</a>
+  </div>
+</section>
+{% endblock %}

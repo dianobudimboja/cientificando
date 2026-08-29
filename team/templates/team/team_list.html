@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}Equipa — Cientificando{% endblock %}
+{% block description %}As pessoas por trás da tecnologia da Cientificando.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Equipa</span>
+    <h1 style="margin-top:16px; max-width:20ch;">As pessoas por trás da tecnologia.</h1>
+    <p class="lede" style="margin-top:20px; max-width:64ch;">A Cientificando é construída por pessoas com diferentes competências, perspectivas e áreas de especialização, unidas pela mesma curiosidade: compreender problemas e construir soluções.</p>
+  </div>
+</section>
+
+{% for dept_label, dept_members in members_by_dept.items %}
+  {% if dept_members %}
+  <section class="section {% if forloop.counter|divisibleby:2 %}section-soft{% endif %}">
+    <div class="container">
+      <span class="eyebrow">{{ dept_label }}</span>
+      <div class="team-grid reveal" style="margin-top:30px;">
+        {% for member in dept_members %}
+        <a class="team-card-mini" href="{{ member.get_absolute_url }}">
+          <div class="team-photo">
+            {% if member.photo %}
+              <img src="{{ member.photo.url }}" alt="{{ member.full_name }}">
+            {% else %}
+              <span class="team-photo-placeholder">{{ member.full_name|slice:":1" }}</span>
+            {% endif %}
+          </div>
+          <h3>{{ member.full_name }}</h3>
+          <p class="team-role">{{ member.role }}</p>
+          <div class="team-links">
+            {% if member.linkedin_url %}<span class="team-link-tag">LinkedIn</span>{% endif %}
+            {% if member.github_url %}<span class="team-link-tag">GitHub</span>{% endif %}
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+{% empty %}
+  <section class="section">
+    <div class="container">
+      <div class="todo">Sem membros publicados ainda — adicione a equipa a partir do admin em <code>/admin/team/teammember/</code>. Não inventar cargos ou biografias.</div>
+    </div>
+  </section>
+{% endfor %}
+
+<section class="section" style="text-align:center;">
+  <div class="container">
+    <h2>Quer fazer parte da Cientificando?</h2>
+    <div class="hero-ctas" style="justify-content:center; margin-top:26px;">
+      <a href="{% url 'core:carreiras' %}" class="btn btn-primary">Ver oportunidades</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

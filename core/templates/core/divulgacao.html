@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Divulgação Científica — Cientificando{% endblock %}
+{% block description %}Conteúdos sobre ciência, tecnologia, programação, inteligência artificial e pensamento crítico. YouTube, artigos, educação e comunidade.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Divulgação Científica</span>
+    <h1 style="margin-top:16px; max-width:18ch;">Tornar o conhecimento acessível.</h1>
+    <p class="lede" style="margin-top:20px; max-width:60ch;">A tecnologia só produz transformação quando o conhecimento consegue chegar às pessoas. Através da nossa plataforma de divulgação científica, produzimos conteúdos sobre ciência, tecnologia, programação, inteligência artificial e pensamento crítico.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-2 reveal">
+      <div class="offer-card">
+        <span class="idx">YouTube</span><h3>Últimos vídeos</h3><p>Conteúdo em vídeo sobre ciência, tecnologia e programação.</p>
+        <a href="{{ site_settings.youtube_url }}" target="_blank" rel="noopener" class="btn btn-ghost" style="margin-top:18px;">Visitar o canal</a>
+      </div>
+      <div class="offer-card">
+        <span class="idx">Artigos</span><h3>Conteúdo escrito</h3><p>Artigos sobre tecnologia, ciência e inteligência artificial.</p>
+        <a href="{% url 'blog:list' %}" class="btn btn-ghost" style="margin-top:18px;">Ler artigos</a>
+      </div>
+      <div class="offer-card"><span class="idx">Educação</span><h3>Cursos e iniciativas</h3><p>Programas educativos para tornar a tecnologia mais acessível.</p></div>
+      <div class="offer-card"><span class="idx">Comunidade</span><h3>Eventos e actividades</h3><p>Encontros, eventos e iniciativas com a comunidade.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark" style="text-align:center;">
+  <div class="container">
+    <h2 style="color:#fff;">Quer acompanhar o que estamos a construir?</h2>
+    <div class="hero-ctas" style="justify-content:center; margin-top:26px;">
+      <a href="{{ site_settings.youtube_url }}" target="_blank" rel="noopener" class="btn btn-accent">Visitar o Canal</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

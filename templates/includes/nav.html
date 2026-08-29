@@ -1,0 +1,23 @@
+{% load static %}
+<header class="site-header">
+  <nav class="nav">
+    <a href="{% url 'core:home' %}" class="logo">
+      <img src="{% static 'img/logo-symbol.png' %}" alt="{{ SITE_NAME }}" class="brand-mark">
+      {{ SITE_NAME }}
+    </a>
+    <ul class="nav-links">
+      <li><a href="{% url 'core:sobre' %}">Sobre</a></li>
+      <li><a href="{% url 'core:servicos' %}">Serviços</a></li>
+      <li><a href="{% url 'core:ia' %}">IA</a></li>
+      <li><a href="{% url 'projects:list' %}">Projectos</a></li>
+      <li><a href="{% url 'core:investigacao' %}">Investigação</a></li>
+      <li><a href="{% url 'core:divulgacao' %}">Divulgação</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="{% url 'contact:form' %}" class="btn btn-ghost">Fale Connosco</a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,28 @@
+{% load static %}<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% block title %}Cientificando — Organização Tecnológica Angolana{% endblock %}</title>
+<meta name="description" content="{% block description %}A Cientificando é uma organização tecnológica angolana que combina engenharia de software, inteligência artificial, ciência de dados, investigação aplicada e divulgação científica.{% endblock %}">
+<link rel="canonical" href="{% block canonical %}https://cientificando.com{{ request.path }}{% endblock %}">
+<meta property="og:title" content="{% block og_title %}Cientificando — Tecnologia. Inteligência. Impacto.{% endblock %}">
+<meta property="og:description" content="{% block og_description %}Engenharia de software, Inteligência Artificial, investigação aplicada e divulgação científica, feitas em Angola.{% endblock %}">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{% static 'img/logo-symbol.png' %}">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% block extra_head %}{% endblock %}
+</head>
+<body>
+
+{% include 'includes/nav.html' %}
+
+{% block content %}{% endblock %}
+
+{% include 'includes/footer.html' %}
+
+<script src="{% static 'js/main.js' %}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>

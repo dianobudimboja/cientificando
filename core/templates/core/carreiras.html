@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Carreiras — Cientificando{% endblock %}
+{% block description %}Construa o futuro com a Cientificando. Áreas de actuação e candidatura espontânea.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Carreiras</span>
+    <h1 style="margin-top:16px; max-width:18ch;">Construa o futuro connosco.</h1>
+    <p class="lede" style="margin-top:20px; max-width:60ch;">Procuramos pessoas curiosas, técnicas e orientadas para resolver problemas.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <span class="eyebrow">Áreas</span>
+    <div class="grid-3 reveal" style="margin-top:26px;">
+      <div class="offer-card"><h3>Software Engineering</h3></div>
+      <div class="offer-card"><h3>AI</h3></div>
+      <div class="offer-card"><h3>Data</h3></div>
+      <div class="offer-card"><h3>Research</h3></div>
+      <div class="offer-card"><h3>Design</h3></div>
+      <div class="offer-card"><h3>Product</h3></div>
+      <div class="offer-card"><h3>Communication</h3></div>
+    </div>
+    <div class="todo" style="margin-top:26px;">TODO — não existem vagas abertas de momento. Publicar aqui apenas oportunidades reais e confirmadas.</div>
+  </div>
+</section>
+
+<section class="section section-soft" style="text-align:center;">
+  <div class="container">
+    <h2>Não há uma vaga que corresponda ao seu perfil?</h2>
+    <div class="hero-ctas" style="justify-content:center; margin-top:26px;">
+      <a href="mailto:{{ site_settings.contact_email }}" class="btn btn-primary">Enviar candidatura espontânea</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

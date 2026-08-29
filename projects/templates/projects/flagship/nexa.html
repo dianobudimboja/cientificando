@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Nexa — The Intelligence Network | Cientificando{% endblock %}
+{% block description %}Nexa é uma infraestrutura de inteligência artificial concebida para conectar modelos, agentes, ferramentas, conhecimento e sistemas numa arquitectura unificada.{% endblock %}
+
+{% block content %}
+<section class="hero" style="padding-bottom:70px;">
+  <div class="container">
+    <img src="{% static 'img/logo-nexa.png' %}" alt="Nexa — The Intelligence Network" style="max-width:280px; margin-bottom:26px;">
+    <span class="eyebrow">Produto Cientificando · Plataforma de IA</span>
+    <h1 style="margin-top:18px;">{{ project.name|default:"Nexa" }}</h1>
+    <p style="font-family:var(--font-mono); color:#2e5bff; margin-top:6px; letter-spacing:.03em;">{{ project.subtitle|default:"The Intelligence Network" }}</p>
+    <p class="lede" style="margin-top:22px;">{{ project.short_description|default:"A Nexa é uma infraestrutura de inteligência artificial concebida para conectar modelos, agentes, ferramentas, conhecimento e sistemas numa arquitectura unificada." }}</p>
+    <div class="hero-ctas">
+      <a href="{% url 'contact:form' %}" class="btn btn-accent">Falar sobre a Nexa</a>
+      <a href="{% url 'projects:list' %}" class="btn btn-on-dark">Ver outros projectos</a>
+    </div>
+    <ul class="tech-tags">
+      <li>AI Agents</li><li>LLMs</li><li>Reasoning</li><li>Memory</li><li>Planning</li><li>Tool Use</li><li>Orchestration</li><li>Knowledge Layer</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">Conceito</span><h2 style="margin-top:14px; max-width:26ch;">Inteligência coordenada, não apenas um chatbot.</h2></div></div>
+    <p class="lede reveal">
+      {% if project.long_description %}{{ project.long_description }}{% else %}
+      Em vez de tratar Inteligência Artificial como um simples chatbot, a Nexa foi pensada como uma camada de inteligência capaz de coordenar diferentes agentes, modelos e ferramentas para executar tarefas complexas.
+      {% endif %}
+    </p>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">Arquitectura conceptual</span><h2 style="margin-top:14px; color:#fff;">Como a Nexa organiza a inteligência</h2></div></div>
+    <div class="reveal" style="border:1px solid var(--line-dark); border-radius:12px; padding:50px 30px; overflow-x:auto;">
+      <svg viewBox="0 0 760 340" width="100%" style="min-width:600px;" role="img" aria-label="Diagrama da arquitectura da Nexa">
+        <defs><marker id="arrow2" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#4a5a7d"/></marker></defs>
+        <g font-family="JetBrains Mono, monospace" font-size="13" fill="#fff">
+          <rect x="320" y="6" width="120" height="38" rx="6" fill="#2e5bff"/><text x="380" y="30" text-anchor="middle" font-weight="700">NEXA</text>
+          <rect x="315" y="80" width="130" height="42" rx="6" fill="#12213f" stroke="#2e5bff"/><text x="380" y="106" text-anchor="middle">AI Orchestrator</text>
+          <rect x="80" y="165" width="130" height="42" rx="6" fill="#12213f" stroke="#1c3157"/><text x="145" y="191" text-anchor="middle">Agents</text>
+          <rect x="315" y="165" width="130" height="42" rx="6" fill="#12213f" stroke="#1c3157"/><text x="380" y="191" text-anchor="middle">Tools</text>
+          <rect x="550" y="165" width="130" height="42" rx="6" fill="#12213f" stroke="#1c3157"/><text x="615" y="191" text-anchor="middle">Knowledge</text>
+          <rect x="80" y="245" width="130" height="42" rx="6" fill="#0b1730" stroke="#1c3157"/><text x="145" y="271" text-anchor="middle">Models</text>
+          <rect x="315" y="245" width="130" height="42" rx="6" fill="#0b1730" stroke="#1c3157"/><text x="380" y="271" text-anchor="middle">APIs</text>
+          <rect x="550" y="245" width="130" height="42" rx="6" fill="#0b1730" stroke="#1c3157"/><text x="615" y="271" text-anchor="middle">Data Sources</text>
+          <rect x="315" y="310" width="130" height="28" rx="6" fill="#12b3a8"/><text x="380" y="329" text-anchor="middle">Execution</text>
+        </g>
+        <g stroke="#4a5a7d" stroke-width="1.3" fill="none" marker-end="url(#arrow2)">
+          <path d="M380 44 L380 78"/><path d="M355 122 L165 163"/><path d="M380 122 L380 163"/><path d="M405 122 L595 163"/>
+          <path d="M145 207 L145 243"/><path d="M380 207 L380 243"/><path d="M615 207 L615 243"/>
+          <path d="M180 291 L340 308"/><path d="M380 287 L380 308"/><path d="M580 291 L420 308"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="text-align:center;">
+  <div class="container">
+    <span class="eyebrow" style="justify-content:center;">Nexa — The Intelligence Network</span>
+    <h2 style="margin-top:14px;">Um produto em desenvolvimento pela Cientificando.</h2>
+    <p class="lede" style="margin:16px auto 0; text-align:center;">A Nexa integra a carteira de produtos da Cientificando, ao lado do KIVA — cada um com identidade e propósito próprios dentro do mesmo ecossistema tecnológico.</p>
+    <div class="hero-ctas" style="justify-content:center; margin-top:30px;">
+      <a href="{% url 'projects:detail' slug='kiva' %}" class="btn btn-ghost">Conhecer o KIVA</a>
+      <a href="{% url 'contact:form' %}" class="btn btn-primary">Fale Connosco</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="reveal in">
+      <span class="eyebrow">Organização Tecnológica Angolana</span>
+      <h1>Construímos Tecnologia para Resolver Problemas Reais.</h1>
+      <p class="lede">Desenvolvemos software, soluções de Inteligência Artificial e produtos digitais enquanto promovemos ciência, investigação e inovação.</p>
+      <div class="hero-ctas">
+        <a href="{% url 'projects:list' %}" class="btn btn-accent">Explorar Projectos</a>
+        <a href="{% url 'contact:form' %}" class="btn btn-on-dark">Fale Connosco</a>
+      </div>
+    </div>
+    <div class="hero-visual reveal in">
+      <svg viewBox="0 0 480 480" width="100%" height="100%" aria-hidden="true" role="img" aria-label="Motivo orbital inspirado no símbolo da Cientificando">
+        <defs>
+          <linearGradient id="goldline" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#c9a227" stop-opacity="0.9"/>
+            <stop offset="1" stop-color="#c9a227" stop-opacity="0.15"/>
+          </linearGradient>
+        </defs>
+        <g fill="none" stroke-width="1">
+          <circle cx="240" cy="240" r="190" stroke="var(--line-dark)"/>
+          <circle cx="240" cy="240" r="150" stroke="var(--line-dark)"/>
+          <circle cx="240" cy="240" r="110" stroke="url(#goldline)"/>
+          <circle cx="240" cy="240" r="70" stroke="var(--line-dark)"/>
+        </g>
+        <line x1="240" y1="50" x2="240" y2="430" stroke="var(--line-dark)" stroke-width="1"/>
+        <line x1="50" y1="240" x2="430" y2="240" stroke="var(--line-dark)" stroke-width="1"/>
+        <g fill="#c9a227">
+          <circle cx="240" cy="50"><animate attributeName="r" values="3;4.5;3" dur="4s" repeatCount="indefinite"/></circle>
+          <circle cx="240" cy="430" r="3"/>
+        </g>
+        <g fill="#b7bcc4">
+          <circle cx="50" cy="240" r="3"/>
+          <circle cx="430" cy="240" r="3"/>
+          <circle cx="350" cy="130" r="3.5"/>
+          <circle cx="130" cy="350" r="3.5"/>
+        </g>
+        <circle cx="240" cy="240" r="4" fill="#fff"/>
+      </svg>
+    </div>
+  </div>
+  <div class="container">
+    <p class="philosophy-strip">
+      {% for word in SITE_PHILOSOPHY %}<span class="word">{{ word }}</span>{% if not forloop.last %}<span class="sep">·</span>{% endif %}{% endfor %}
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div style="max-width:640px;">
+        <span class="eyebrow">Quem somos</span>
+        <h2 style="margin-top:14px;">Ciência que se transforma em tecnologia.</h2>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px;" class="reveal">
+      <p class="lede">A Cientificando nasceu da união entre curiosidade científica, engenharia e vontade de criar. Investigamos, desenvolvemos e comunicamos tecnologia para transformar problemas complexos em soluções concretas.</p>
+      <p class="lede">Do desenvolvimento de software à Inteligência Artificial, trabalhamos na intersecção entre conhecimento e aplicação prática — para pessoas, empresas e instituições em Angola e em África.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">O que fazemos</span>
+        <h2 style="margin-top:14px;">Tecnologia de ponta, orientada para resultados.</h2>
+      </div>
+      <a href="{% url 'core:servicos' %}" class="btn btn-ghost">Ver todos os serviços</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="verb-grid reveal">
+      <div class="verb-card">
+        <span class="verb-word">Construímos</span>
+        <ul><li>Software</li><li>Inteligência Artificial</li><li>Dados</li></ul>
+      </div>
+      <div class="verb-card">
+        <span class="verb-word">Transformamos</span>
+        <ul><li>Processos</li><li>Operações</li><li>Experiências digitais</li></ul>
+      </div>
+      <div class="verb-card">
+        <span class="verb-word">Investigamos</span>
+        <ul><li>IA</li><li>Sistemas inteligentes</li><li>Novas tecnologias</li></ul>
+      </div>
+      <div class="verb-card">
+        <span class="verb-word">Partilhamos</span>
+        <ul><li>Ciência</li><li>Tecnologia</li><li>Conhecimento</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">Processo</span><h2 style="margin-top:14px;">Da ideia ao impacto.</h2></div></div>
+  </div>
+  <div class="container">
+    <div class="process reveal">
+      <div class="step"><span class="num">01</span><h3>Descobrir</h3><p>Compreendemos o problema, o contexto e os objectivos.</p></div>
+      <div class="step"><span class="num">02</span><h3>Conceber</h3><p>Definimos estratégia, arquitectura e experiência.</p></div>
+      <div class="step"><span class="num">03</span><h3>Construir</h3><p>Desenvolvemos a solução com as tecnologias adequadas.</p></div>
+      <div class="step"><span class="num">04</span><h3>Validar</h3><p>Testamos, medimos e refinamos.</p></div>
+      <div class="step"><span class="num">05</span><h3>Evoluir</h3><p>Melhoramos continuamente com base em dados e utilização real.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Portfólio</span>
+        <h2 style="margin-top:14px;">Projectos que estamos a construir.</h2>
+        <p class="lede" style="margin-top:14px;">Além de desenvolver soluções para parceiros e organizações, a Cientificando mantém uma carteira própria de produtos, experiências e projectos de investigação.</p>
+      </div>
+      <a href="{% url 'projects:list' %}" class="btn btn-ghost">Ver todos os projectos</a>
+    </div>
+
+    <div class="projects-grid reveal">
+      {% for project in featured_projects %}
+      <a class="project-card" href="{{ project.get_absolute_url }}">
+        <div class="project-thumb">
+          {% if project.cover_image %}
+            <img src="{{ project.cover_image.url }}" alt="{{ project.name }}" style="width:100%;height:100%;object-fit:cover;">
+          {% else %}
+            <svg class="node-art" viewBox="0 0 300 190" width="100%" height="100%">
+              <g stroke="{% if project.category == 'ia' or project.category == 'produtos' %}#c9a227{% else %}#b7bcc4{% endif %}" stroke-opacity="0.5" fill="none">
+                <path d="M150 40 L80 100 M150 40 L220 100 M80 100 L150 150 M220 100 L150 150"/>
+              </g>
+              <g fill="{% if project.category == 'ia' or project.category == 'produtos' %}#c9a227{% else %}#b7bcc4{% endif %}"><circle cx="150" cy="40" r="4"/></g>
+            </svg>
+          {% endif %}
+        </div>
+        <div class="project-body">
+          <span class="project-tag">{{ project.tag }}</span>
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.short_description }}</p>
+          <span class="status-pill">{{ project.get_status_display }}</span>
+        </div>
+      </a>
+      {% empty %}
+        <p class="todo">Sem projectos publicados ainda — adicione projectos a partir do admin em <code>/admin/projects/project/</code>.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if site_settings.metrics %}
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">Resultados</span><h2 style="margin-top:14px; color:#fff;">De ideias a resultados.</h2></div></div>
+  </div>
+  <div class="container">
+    <div class="stats reveal">
+      {% for label, value in site_settings.metrics %}
+      <div class="stat"><div class="num">{{ value }}</div><div class="label">{{ label }}</div></div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+
+
+<section class="section" style="text-align:center;">
+  <div class="container">
+    <span class="eyebrow" style="justify-content:center;">Vamos construir</span>
+    <h2 style="margin-top:14px; max-width:20ch; margin-left:auto; margin-right:auto;">Tem um problema que precisa de ser resolvido?</h2>
+    <p class="lede" style="margin:18px auto 32px; text-align:center;">Conte-nos o que está a tentar construir. Vamos compreender o problema e explorar consigo a melhor abordagem tecnológica.</p>
+    <div class="hero-ctas" style="justify-content:center;">
+      <a href="{% url 'contact:form' %}" class="btn btn-primary">Iniciar um Projecto</a>
+      <a href="{% url 'projects:list' %}" class="btn btn-ghost">Explorar Projectos</a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

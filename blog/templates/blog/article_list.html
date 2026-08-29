@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Insights — Cientificando{% endblock %}
+{% block description %}Artigos sobre inteligência artificial, engenharia de software, ciência, tecnologia e dados.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Insights</span>
+    <h1 style="margin-top:16px; max-width:18ch;">Ideias sobre ciência e tecnologia.</h1>
+    <p class="lede" style="margin-top:20px; max-width:60ch;">Artigos sobre Inteligência Artificial, Engenharia de Software, Ciência, Tecnologia, Programação, Dados, Investigação e Empreendedorismo Tecnológico.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3 reveal">
+      {% for article in articles %}
+      <a class="article-card" href="{{ article.get_absolute_url }}">
+        <span class="article-meta">{{ article.get_category_display }} · {{ article.reading_time_minutes }} min</span>
+        <h3>{{ article.title }}</h3>
+        <p style="color:var(--muted); font-size:.9rem;">{{ article.summary }}</p>
+        <span class="article-meta">{{ article.author_name }} · {{ article.published_at|date:"d M Y" }}</span>
+      </a>
+      {% empty %}
+        <div class="offer-card" style="grid-column:1 / -1; text-align:center; padding:60px 30px;">
+          <h3>Estamos a preparar novos conteúdos.</h3>
+          <p style="color:var(--muted); margin-top:10px;">Os primeiros artigos serão publicados aqui em breve.</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if is_paginated %}
+    <div class="hero-ctas" style="margin-top:40px;">
+      {% if page_obj.has_previous %}<a class="btn btn-ghost" href="?page={{ page_obj.previous_page_number }}">← Anteriores</a>{% endif %}
+      {% if page_obj.has_next %}<a class="btn btn-ghost" href="?page={{ page_obj.next_page_number }}">Seguintes →</a>{% endif %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

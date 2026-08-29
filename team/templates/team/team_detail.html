@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}{{ member.full_name }} — Cientificando{% endblock %}
+{% block description %}{{ member.full_name }}, {{ member.role }} na Cientificando.{% endblock %}
+
+{% block content %}
+<section class="section" style="padding-top:150px;">
+  <div class="container" style="display:grid; grid-template-columns:.8fr 1.2fr; gap:56px; align-items:start;">
+    <div>
+      <div class="team-photo-lg">
+        {% if member.photo %}
+          <img src="{{ member.photo.url }}" alt="{{ member.full_name }}">
+        {% else %}
+          <span class="team-photo-placeholder">{{ member.full_name|slice:":1" }}</span>
+        {% endif %}
+      </div>
+      <div class="team-links" style="margin-top:20px;">
+        {% if member.linkedin_url %}<a href="{{ member.linkedin_url }}" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn</a>{% endif %}
+        {% if member.github_url %}<a href="{{ member.github_url }}" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>{% endif %}
+      </div>
+    </div>
+    <div>
+      <span class="eyebrow">{{ member.get_department_display }}</span>
+      <h1 style="margin-top:14px;">{{ member.full_name }}</h1>
+      <p class="lede" style="margin-top:6px; color:var(--muted);">{{ member.role }}</p>
+
+      {% if member.bio %}
+      <div class="lede" style="margin-top:30px; color:var(--ink);">{{ member.bio|linebreaks }}</div>
+      {% endif %}
+
+      {% if member.areas_list %}
+      <div style="margin-top:34px;">
+        <span class="eyebrow">Áreas</span>
+        <ul class="tech-tags" style="border-top:none; padding-top:14px; margin-top:14px;">
+          {% for area in member.areas_list %}<li>{{ area }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" style="text-align:center;">
+  <div class="container">
+    <a href="{% url 'team:list' %}" class="btn btn-ghost">← Voltar à equipa</a>
+  </div>
+</section>
+{% endblock %}

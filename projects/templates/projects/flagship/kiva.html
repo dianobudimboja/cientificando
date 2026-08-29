@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %}KIVA — O Sócio Inteligente para o Empreendedor Informal | Cientificando{% endblock %}
+{% block description %}KIVA é uma plataforma de Inteligência Artificial concebida para apoiar pequenos empreendedores na gestão, marketing, vendas e crescimento dos seus negócios.{% endblock %}
+
+{% block content %}
+<section class="hero" style="padding-bottom:70px;">
+  <div class="container">
+    <span class="eyebrow">Produto Cientificando</span>
+    <h1 style="margin-top:18px;">{{ project.name|default:"KIVA" }}</h1>
+    <p style="font-family:var(--font-mono); color:var(--accent-2); margin-top:6px; letter-spacing:.03em;">{{ project.subtitle|default:"O Sócio Inteligente para o Empreendedor Informal" }}</p>
+    <p class="lede" style="margin-top:22px;">{{ project.short_description|default:"O KIVA é uma plataforma de Inteligência Artificial concebida para apoiar pequenos empreendedores na gestão, marketing, vendas e crescimento dos seus negócios." }}</p>
+    <div class="hero-ctas">
+      <a href="{% url 'contact:form' %}" class="btn btn-accent">Falar sobre o KIVA</a>
+      <a href="{% url 'projects:list' %}" class="btn btn-on-dark">Ver outros projectos</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:60px;">
+      <div>
+        <span class="eyebrow">Problema</span>
+        <h2 style="margin-top:14px;">Negócios reais, sem ferramentas adequadas.</h2>
+        <p class="lede" style="margin-top:16px;">Muitos empreendedores informais possuem actividade económica real, mas não dispõem de ferramentas digitais adequadas para organizar, compreender e fazer crescer os seus negócios.</p>
+      </div>
+      <div>
+        <span class="eyebrow">Solução</span>
+        <h2 style="margin-top:14px;">Um parceiro digital inteligente.</h2>
+        <p class="lede" style="margin-top:16px;">O KIVA funciona como um parceiro digital inteligente — mais do que uma aplicação de gestão, um sócio que ajuda o empreendedor a decidir melhor todos os dias.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">Módulos</span><h2 style="margin-top:14px;">O que o KIVA oferece</h2></div></div>
+    <div class="grid-2 reveal">
+      <div class="offer-card"><span class="idx">Marketing</span><h3>Presença digital do negócio</h3><p>Catálogo, criação de conteúdos, divulgação e gestão de presença digital.</p></div>
+      <div class="offer-card"><span class="idx">Vendas</span><h3>Registo e histórico</h3><p>Registo de vendas, produtos, clientes, histórico e integração com conversas.</p></div>
+      <div class="offer-card"><span class="idx">Gestão</span><h3>Visão do negócio</h3><p>Indicadores, análise do negócio, riscos, desempenho e relatórios.</p></div>
+      <div class="offer-card"><span class="idx">Assistente Inteligente</span><h3>Recomendações baseadas em dados</h3><p>Um assistente capaz de interpretar os dados do negócio e fornecer recomendações.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="text-align:center;">
+  <div class="container">
+    <h2 style="max-width:22ch; margin:0 auto;">Mais do que uma aplicação de gestão. Um parceiro digital para o empreendedor.</h2>
+    <div class="hero-ctas" style="justify-content:center; margin-top:30px;">
+      <a href="{% url 'projects:detail' slug='nexa' %}" class="btn btn-ghost">Conhecer a Nexa</a>
+      <a href="{% url 'contact:form' %}" class="btn btn-primary">Fale Connosco</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

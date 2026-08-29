@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Serviços — Cientificando{% endblock %}
+{% block description %}Desenvolvimento de software, aplicações mobile, inteligência artificial, sistemas empresariais, dados e consultoria tecnológica.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Serviços</span>
+    <h1 style="margin-top:16px; max-width:18ch;">Tecnologia construída para o seu problema.</h1>
+    <p class="lede" style="margin-top:20px;">Não começamos pela tecnologia. Começamos pelo problema.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-3 reveal">
+      <div class="offer-card"><span class="idx">01</span><h3>Engenharia de Software</h3><p>Desenvolvimento de aplicações web, sistemas, plataformas, APIs e software personalizado.</p></div>
+      <div class="offer-card"><span class="idx">02</span><h3>Inteligência Artificial</h3><p>Assistentes, agentes inteligentes, aplicações com LLMs, automação e integração de IA. <a href="{% url 'core:ia' %}" style="color:var(--gold);">Ver detalhe →</a></p></div>
+      <div class="offer-card" id="dados"><span class="idx">03</span><h3>Dados & Analytics</h3><p>Análise de dados, dashboards, visualização e sistemas de apoio à decisão.</p></div>
+      <div class="offer-card" id="transformacao"><span class="idx">04</span><h3>Transformação Digital</h3><p>Digitalização e optimização de processos.</p></div>
+      <div class="offer-card"><span class="idx">05</span><h3>Prototipagem & MVP</h3><p>Transformação de ideias em protótipos funcionais.</p></div>
+      <div class="offer-card"><span class="idx">06</span><h3>Investigação & Desenvolvimento</h3><p>Exploração de novas tecnologias, experimentação e desenvolvimento de soluções.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" style="text-align:center;">
+  <div class="container">
+    <h2>Quer discutir um projecto connosco?</h2>
+    <div class="hero-ctas" style="justify-content:center; margin-top:26px;">
+      <a href="{% url 'contact:form' %}" class="btn btn-primary">Iniciar um Projecto</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

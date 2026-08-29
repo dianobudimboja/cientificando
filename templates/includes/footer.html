@@ -1,0 +1,68 @@
+{% load static %}
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="logo" style="color:#fff;">
+          <img src="{% static 'img/logo-symbol.png' %}" alt="{{ SITE_NAME }}" class="brand-mark">
+          {{ SITE_NAME }}
+        </div>
+        <p class="footer-tagline">{{ SITE_TAGLINE }}</p>
+        <p class="footer-philosophy">
+          {% for word in SITE_PHILOSOPHY %}{{ word }}{% if not forloop.last %} · {% endif %}{% endfor %}
+        </p>
+      </div>
+      <div>
+        <h4>Organização</h4>
+        <ul>
+          <li><a href="{% url 'core:sobre' %}">Sobre</a></li>
+          <li><a href="{% url 'team:list' %}">Equipa</a></li>
+          <li><a href="{% url 'core:investigacao' %}">Investigação</a></li>
+          <li><a href="{% url 'core:carreiras' %}">Carreiras</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Soluções</h4>
+        <ul>
+          <li><a href="{% url 'core:servicos' %}">Software</a></li>
+          <li><a href="{% url 'core:ia' %}">Inteligência Artificial</a></li>
+          <li><a href="{% url 'core:servicos' %}#dados">Dados</a></li>
+          <li><a href="{% url 'core:servicos' %}#transformacao">Transformação Digital</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Projectos</h4>
+        <ul>
+          <li><a href="{% url 'projects:detail' slug='nexa' %}">Nexa</a></li>
+          <li><a href="{% url 'projects:detail' slug='kiva' %}">KIVA</a></li>
+          <li><a href="{% url 'projects:list' %}">Ver todos</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Conhecimento</h4>
+        <ul>
+          <li><a href="{% url 'core:divulgacao' %}">Divulgação</a></li>
+          <li><a href="{% url 'blog:list' %}">Blog</a></li>
+          {% if site_settings.youtube_url %}<li><a href="{{ site_settings.youtube_url }}" target="_blank" rel="noopener">YouTube</a></li>{% endif %}
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          {% if site_settings.contact_email %}<li><a href="mailto:{{ site_settings.contact_email }}">{{ site_settings.contact_email }}</a></li>{% endif %}
+          {% if site_settings.whatsapp_link %}<li><a href="{{ site_settings.whatsapp_link }}" target="_blank" rel="noopener">WhatsApp</a></li>{% endif %}
+          {% if site_settings.instagram_url %}<li><a href="{{ site_settings.instagram_url }}" target="_blank" rel="noopener">Instagram</a></li>{% endif %}
+          {% if site_settings.linkedin_url %}<li><a href="{{ site_settings.linkedin_url }}" target="_blank" rel="noopener">LinkedIn</a></li>{% endif %}
+          {% if site_settings.github_url %}<li><a href="{{ site_settings.github_url }}" target="_blank" rel="noopener">GitHub</a></li>{% endif %}
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© {% now "Y" %} {{ SITE_NAME }}. Todos os direitos reservados.</p>
+      <div class="footer-legal">
+        <a href="{% url 'core:privacidade' %}">Política de Privacidade</a>
+        <a href="{% url 'core:termos' %}">Termos de Utilização</a>
+      </div>
+    </div>
+  </div>
+</footer>

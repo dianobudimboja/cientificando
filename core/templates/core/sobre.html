@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sobre — Cientificando{% endblock %}
+{% block description %}A Cientificando é uma organização tecnológica angolana que combina engenharia de software, inteligência artificial, investigação aplicada e divulgação científica.{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Sobre a Cientificando</span>
+    <h1 style="margin-top:16px; max-width:16ch;">Uma organização que combina ciência, engenharia e inteligência artificial.</h1>
+    <p class="lede" style="margin-top:20px;">A Cientificando é uma organização tecnológica angolana dedicada ao desenvolvimento de software, inteligência artificial, investigação aplicada e divulgação científica, criando soluções inovadoras para pessoas, empresas e instituições.</p>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container center">
+    <img src="{% static 'img/logo-completo.png' %}" alt="Selo Cientificando — Analisar, Compreender, Transformar" style="width:220px; margin:0 auto 34px;">
+    <span class="eyebrow" style="justify-content:center;">Filosofia</span>
+    <h2 style="margin-top:14px; color:#fff;">Analisar. Compreender. Transformar.</h2>
+    <div class="grid-3 reveal" style="margin-top:40px; background:transparent;">
+      <div class="offer-card" style="background:var(--navy-800); border:1px solid var(--line-dark);">
+        <span class="idx" style="color:var(--gold);">Analisar</span>
+        <h3 style="color:#fff;">Rigor</h3>
+        <p style="color:var(--muted-dark);">Investigamos problemas e dados com rigor.</p>
+      </div>
+      <div class="offer-card" style="background:var(--navy-800); border:1px solid var(--line-dark);">
+        <span class="idx" style="color:var(--gold);">Compreender</span>
+        <h3 style="color:#fff;">Conhecimento</h3>
+        <p style="color:var(--muted-dark);">Transformamos informação em conhecimento aplicável e relevante.</p>
+      </div>
+      <div class="offer-card" style="background:var(--navy-800); border:1px solid var(--line-dark);">
+        <span class="idx" style="color:var(--gold);">Transformar</span>
+        <h3 style="color:#fff;">Impacto</h3>
+        <p style="color:var(--muted-dark);">Criamos tecnologia e soluções que geram impacto real.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:60px;">
+    <div>
+      <span class="eyebrow">Missão</span>
+      <h2 style="margin-top:14px;">Transformar conhecimento em tecnologia.</h2>
+      <p class="lede" style="margin-top:16px;">Desenvolvemos produtos digitais, sistemas, plataformas e experiências tecnológicas orientadas para problemas reais, enquanto promovemos a ciência e a tecnologia através de conteúdos educativos, investigação e iniciativas de formação.</p>
+    </div>
+    <div>
+      <span class="eyebrow">Ambição</span>
+      <h2 style="margin-top:14px;">Um ecossistema tecnológico mais competitivo.</h2>
+      <p class="lede" style="margin-top:16px;">A nossa ambição é contribuir para um ecossistema tecnológico mais inovador, científico e competitivo em Angola e em África — construindo tecnologia, formando pessoas e partilhando conhecimento.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-dark">
+  <div class="container center">
+    <span class="eyebrow" style="justify-content:center;">A equação Cientificando</span>
+    <h2 style="margin-top:14px; color:#fff;">A combinação que nos define</h2>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:14px; margin-top:40px; font-family:var(--font-mono); font-size:.85rem; letter-spacing:.04em; text-transform:uppercase; color:var(--muted-dark);">
+      <span>Science</span><span style="color:var(--accent);">+</span>
+      <span>Engineering</span><span style="color:var(--accent);">+</span>
+      <span>Artificial Intelligence</span><span style="color:var(--accent);">+</span>
+      <span>Research</span><span style="color:var(--accent);">+</span>
+      <span>Education</span><span style="color:var(--accent);">=</span>
+      <span style="color:#fff; font-weight:700;">Cientificando</span>
+    </div>
+    <p class="lede" style="margin:34px auto 0; text-align:center;">Não somos apenas uma software house, nem apenas uma consultora, nem apenas um canal científico. Somos as cinco coisas ao mesmo tempo — e é essa combinação que aparece em tudo o que construímos.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Estrutura da marca</span>
+        <h2 style="margin-top:14px;">Cientificando, produtos e iniciativas.</h2>
+        <p class="lede" style="margin-top:14px; max-width:70ch;">A Cientificando é a organização. Nexa e KIVA são produtos construídos dentro do ecossistema. A investigação é uma frente própria. A divulgação científica é uma iniciativa. Os serviços são a nossa actividade comercial.</p>
+      </div>
+    </div>
+    <div class="grid-2 reveal">
+      <div class="offer-card"><span class="idx">Products</span><h3>Nexa · KIVA · Cientificando</h3><p>Produtos e plataformas de inteligência artificial desenvolvidos internamente.</p></div>
+      <div class="offer-card"><span class="idx">Research</span><h3>MedIntel e outras iniciativas</h3><p>Projectos de investigação aplicada em áreas como HealthTech e sistemas inteligentes.</p></div>
+      <div class="offer-card"><span class="idx">Services</span><h3>Software · IA · Dados</h3><p>Actividade comercial ao serviço de empresas, startups e instituições.</p></div>
+      <div class="offer-card"><span class="idx">Science & Education</span><h3>YouTube · Artigos · Formação</h3><p>Divulgação científica e iniciativas educativas para tornar a tecnologia acessível.</p></div>
+    </div>
+  </div>
+</section>
+
+{% if recognitions %}
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div><span class="eyebrow">Reconhecimento</span><h2 style="margin-top:14px;">Resultados confirmados.</h2></div></div>
+    <div class="grid-2 reveal">
+      {% for r in recognitions %}
+      <div class="offer-card">
+        <span class="idx">{{ r.year }}{% if r.result %} · {{ r.result }}{% endif %}</span>
+        <h3>{{ r.title }}{% if r.related_project %} — {{ r.related_project }}{% endif %}</h3>
+        <p>{{ r.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section section-soft" style="text-align:center;">
+  <div class="container">
+    <h2>Quer conhecer a equipa por trás da Cientificando?</h2>
+    <div class="hero-ctas" style="justify-content:center; margin-top:26px;">
+      <a href="{% url 'team:list' %}" class="btn btn-primary">Conhecer a equipa</a>
+      <a href="{% url 'contact:form' %}" class="btn btn-ghost">Falar com a nossa equipa</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
