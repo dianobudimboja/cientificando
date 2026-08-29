@@ -70,8 +70,6 @@ INSTALLED_APPS = [
     'blog',
     'contact',
 
-    # django-extensions
-    'django_extensions',
 ]
 
 MIDDLEWARE = [
