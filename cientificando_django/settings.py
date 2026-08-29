@@ -22,7 +22,7 @@ SECRET_KEY = os.environ.get(
     'django-insecure-dev-only-change-this-in-production-cientificando-2026',
 )
 
-DEBUG = env_bool('DJANGO_DEBUG', default=True)
+DEBUG = env_bool('DJANGO_DEBUG', default=False)
 
 ALLOWED_HOSTS = [
     h.strip() for h in os.environ.get('DJANGO_ALLOWED_HOSTS', '*').split(',') if h.strip()
