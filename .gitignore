@@ -6,3 +6,8 @@ venv/
 .vercel
 
 .vercel
+venv/
+__pycache__/
+*.pyc
+.env
+media/
