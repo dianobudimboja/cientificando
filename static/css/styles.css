@@ -305,6 +305,7 @@ p{margin:0;}
 .todo{
   border:1px dashed #c9cede; background:#fbfbfd; color:var(--muted);
   padding:14px 18px; border-radius:8px; font-size:.85rem; font-family:var(--font-mono);
+  text-align: justify;
 }
 .page-hero{padding:150px 0 70px; background:var(--paper-soft); border-bottom:1px solid var(--line);}
 .page-hero h1{font-size:clamp(2rem,4vw,3.2rem);}
